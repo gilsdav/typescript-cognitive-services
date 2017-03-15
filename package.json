@@ -1,0 +1,25 @@
+{
+  "name": "typescript-cognitive-services",
+  "version": "1.0.0",
+  "description": "Unofficial SDK for Microsoft Cognitive Service written on Typescript.",
+  "main": "js/index.js",
+  "typings": "js/index",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gilsdav/typescript-cognitive-services.git"
+  },
+  "keywords": [
+    "typescript",
+    "cognitive",
+    "services"
+  ],
+  "author": "Patrick Grasseels, David Gilson",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/gilsdav/typescript-cognitive-services/issues"
+  },
+  "homepage": "https://github.com/gilsdav/typescript-cognitive-services#readme"
+}
