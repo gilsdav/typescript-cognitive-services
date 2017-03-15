@@ -1,0 +1,7 @@
+.npmitnore
+.gitignore
+.git
+.DS_Store
+npm-debug.log
+node_modules
+ts
