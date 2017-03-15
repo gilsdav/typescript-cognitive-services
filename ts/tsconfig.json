@@ -16,7 +16,6 @@
         "!./node_modules/**/*.ts"
     ],
     "files": [
-        "./emotion/api.ts",
         "./index.ts"
     ]
 }
