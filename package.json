@@ -14,7 +14,9 @@
   "keywords": [
     "typescript",
     "cognitive",
-    "services"
+    "services",
+    "microsoft",
+     "azure"
   ],
   "author": "Patrick Grasseels, David Gilson",
   "license": "MIT",

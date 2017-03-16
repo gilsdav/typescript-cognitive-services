@@ -1,16 +1,13 @@
-import { OptionsWithUri } from 'request-promise';
-import rp = require('request-promise');
-
-import { EmotionParameter } from './model';
-
-
-export class EmotionApi {
-    constructor(private API_KEY: string) {
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var rp = require("request-promise");
+var FaceApi = (function () {
+    function FaceApi(API_KEY) {
+        this.API_KEY = API_KEY;
     }
-
-    public emotionRecognition(parameters: EmotionParameter) {
-        if(parameters && (parameters.file || parameters.url)) {
-            let apiData = {
+    FaceApi.prototype.emotionRecognition = function (parameters) {
+        if (parameters && (parameters.file || parameters.url)) {
+            var apiData = {
                 path: "emotion/v1.0/recognize",
                 method: "POST",
                 host: "westus.api.cognitive.microsoft.com",
@@ -21,24 +18,22 @@ export class EmotionApi {
                 },
                 parameters: []
             };
-
-
-            let options = <OptionsWithUri> {
-                uri: `${apiData.scheme}://${apiData.host}/${apiData.path}`,
+            var options = {
+                uri: apiData.scheme + "://" + apiData.host + "/" + apiData.path,
                 method: apiData.method,
                 headers: apiData.headers,
                 qs: parameters,
                 json: true,
                 body: parameters
             };
-            
-            rp(options).then(response => {
+            rp(options).then(function (response) {
                 console.log(response);
             });
-
-        } else {
+        }
+        else {
             throw new Error("Please provide an url or a file");
         }
-    }
-
-}
+    };
+    return FaceApi;
+}());
+exports.FaceApi = FaceApi;
