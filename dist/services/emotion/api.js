@@ -15,13 +15,13 @@ var rp = require("request-promise");
 var EmotionApi = (function (_super) {
     __extends(EmotionApi, _super);
     function EmotionApi(API_KEY) {
-        var _this = _super.call(this, "emotion/v1.0/recognize", "westus.api.cognitive.microsoft.com") || this;
+        var _this = _super.call(this, "emotion/v1.0", "westus.api.cognitive.microsoft.com") || this;
         _this.API_KEY = API_KEY;
         return _this;
     }
     EmotionApi.prototype.emotionRecognition = function (parameters) {
         if (parameters && (parameters.file || parameters.url)) {
-            rp(this.getRequestOptions(parameters)).then(function (response) {
+            rp(this.getRequestOptions(parameters, "recognize")).then(function (response) {
                 console.log(response);
             });
         }

@@ -19,9 +19,9 @@ var BaseApi = (function () {
         this.apiData.host = this.apiHost;
         this.apiData.headers["Host"] = this.apiHost;
     }
-    BaseApi.prototype.getRequestOptions = function (parameters) {
+    BaseApi.prototype.getRequestOptions = function (parameters, specificUrl) {
         var options = {
-            uri: this.apiData.scheme + "://" + this.apiData.host + "/" + this.apiData.path,
+            uri: this.formatUrlParams(parameters, specificUrl),
             method: this.apiData.method,
             headers: this.apiData.headers,
             qs: parameters,
@@ -29,6 +29,15 @@ var BaseApi = (function () {
             body: parameters
         };
         return options;
+    };
+    BaseApi.prototype.formatUrlParams = function (parameters, specificUrl) {
+        var baseUrl = this.apiData.scheme + "://" + this.apiData.host + "/" + this.apiData.path + "/" + specificUrl + "?";
+        for (var property in parameters) {
+            if (parameters.hasOwnProperty(property)) {
+                baseUrl += property + "=" + parameters[property] + "&";
+            }
+        }
+        return baseUrl.slice(0, -1);
     };
     return BaseApi;
 }());

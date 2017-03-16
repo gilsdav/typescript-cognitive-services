@@ -6,5 +6,6 @@ export declare class BaseApi {
     private apiHost;
     protected apiData: any;
     constructor(apiEndpoint: string, apiHost: string);
-    protected getRequestOptions(parameters: BaseModel): OptionsWithUri;
+    protected getRequestOptions(parameters: BaseModel, specificUrl: string): OptionsWithUri;
+    private formatUrlParams(parameters, specificUrl);
 }

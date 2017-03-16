@@ -1,4 +1,4 @@
-export interface EmotionParameter {
+export declare class BaseModel {
     url?: string;
     file?: File;
 }

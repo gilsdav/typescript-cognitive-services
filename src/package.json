@@ -2,10 +2,10 @@
   "name": "typescript-cognitive-services",
   "version": "1.0.0",
   "description": "Unofficial SDK for Microsoft Cognitive Service written on Typescript.",
-  "main": "js/index.js",
-  "typings": "js/index",
+  "main": "../dist/index.js",
+  "typings": "../dist/index",
   "scripts": {
-    "build": "tsc --p ./ts"
+    "build": "tsc --p ./ts  --declarationDir ../dist --outDir ../dist"
   },
   "repository": {
     "type": "git",
