@@ -16,7 +16,7 @@
     "cognitive",
     "services",
     "microsoft",
-     "azure"
+    "azure"
   ],
   "author": "Patrick Grasseels, David Gilson",
   "license": "MIT",
@@ -25,11 +25,13 @@
   },
   "homepage": "https://github.com/gilsdav/typescript-cognitive-services#readme",
   "dependencies": {
+    "lodash": "^4.17.4",
     "request": "^2.81.0",
     "request-promise": "^4.1.1"
   },
   "devDependencies": {
     "@types/request-promise": "^4.1.33",
-    "typescript": "^2.2.1"
+    "typescript": "^2.2.1",
+    "express": "4.15.2"
   }
 }

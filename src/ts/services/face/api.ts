@@ -5,17 +5,19 @@ import rp = require('request-promise');
 // Base core import
 import { BaseApi } from './../../core/base-api';
 import { Constants } from './constants';
-import { FaceDetectParameter } from './model';
+import { FaceDetectParameter, FaceDetectResponse } from './model';
 
 export class FaceApi extends BaseApi {
     constructor(private API_KEY: string) {
         super("face/v1.0", "westus.api.cognitive.microsoft.com");
     }
 
+
+    // Start face methods
     public detect(parameters: FaceDetectParameter) {
         if (parameters && (parameters.file || parameters.url)) {
 
-            rp(this.getRequestOptions(parameters, Constants.FACE_DETECT)).then(response => {
+            rp(this.getRequestOptions(parameters, Constants.FACE_DETECT)).then((response: FaceDetectResponse) => {
                 console.log(response);
             });
 
@@ -24,4 +26,21 @@ export class FaceApi extends BaseApi {
         }
     }
 
+    public findSimilar() {
+
+    }
+
+    public group() {
+
+    }
+
+    public identify() {
+
+    }
+
+    public verify() {
+
+    }
+
+    // End face methods
 }
